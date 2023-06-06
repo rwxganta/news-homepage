@@ -47,6 +47,10 @@ h2, h3 {
     color: var(--neutral-Very-dark-blue);
 }
 
+nav a {
+    text-decoration: none;
+}
+
 .featured-title {
     font-size: 2.5rem;
 }
