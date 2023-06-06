@@ -31,11 +31,17 @@ body {
     line-height: 1.5;
     color: var(--neutral-Dark-grayish-blue);
     background-color: var(--neutral-Off-white);
+
+    position: relative;
 }
 
 img {
     display: block;
     max-width: 100%;
+}
+
+.flow-content > * + * {
+    margin-top: var(--spacer, 1em);
 }
 
 
@@ -48,29 +54,32 @@ h2, h3 {
 }
 
 nav a {
+    color: var(--neutral-Very-dark-blue);
     text-decoration: none;
 }
 
 .featured-title {
-    font-size: 2.5rem;
+    --spacer: .5em;
+    font-size: 2.2rem;
 }
 
 .featured-read-more {
     font-size: 1rem;
     font-weight: var(--fw-bold);
-    /*color: var(--neutral-Off-white);*/
+    color: var(--neutral-Off-white);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .new-title {
-    font-size: 1.7rem;
+    margin-bottom: 1em;
+    font-size: 1.8rem;
     color: var(--primary-Soft--orange);
 }
 
 .news-title {
-    /*color: var(--neutral-Off-white);*/
+    color: var(--neutral-Off-white);
 }
 
 .news-body {
@@ -80,5 +89,139 @@ nav a {
 .article-number {
     font-size: 2rem;
     font-weight: var(--fw-extrabold);
+    line-height: 1;
     color:var(--neutral-Grayish-blue);
+}
+
+
+
+/* Layout */
+
+.container {
+    padding-inline: .6rem;
+    max-width: 1000px;
+    margin-inline: auto;
+}
+
+header {
+    padding-block: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    width: 40px;
+}
+
+header nav {
+    padding: 1.5rem;
+    width: 65vw;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--neutral-Off-white);
+
+    transform: translateX(100%);
+    z-index: 2;
+}
+
+/* overlay */
+body::after {
+    content: '';
+    display: block;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 1;
+
+    display: none;
+}
+
+header nav ul {
+    margin-top: 4rem;
+    padding: 0;
+    list-style: none;
+}
+
+header nav li {
+    margin-top: 1em;
+}
+
+#menu-open {
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+#menu-close {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    aspect-ratio: 1;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.featured-read-more {
+    --spacer: 2em;
+    display: inline-block;
+    padding: 1em 3em;
+    line-height: 1;
+    background-color: var(--primary-Soft--red);
+}
+
+.news {
+    --spacer: 4rem;
+    padding: 1.5em;
+    background-color: var(--neutral-Very-dark-blue);
+}
+
+.news-entry:not(:last-child) {
+    margin-bottom: 1.5em;
+    padding-bottom: 1.5em;
+    border-bottom: 1px solid var(--neutral-Dark-grayish-blue);
+}
+
+.news-title {
+    margin-bottom: .8em;
+}
+
+.article-cards {
+    margin-block: 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+}
+
+.card-body {
+    --spacer: .5em;
+}
+
+.article-entry {
+    display: flex;
+    gap: 1.3em;
+}
+
+.article-image {
+    background-size: cover;
+    background-position: center;
+    min-width: 90px;
+}
+
+.article-image.img-1 {
+    background-image: url(./assets/images/image-retro-pcs.jpg);
+}
+
+.article-image.img-2 {
+    background-image: url(./assets/images/image-top-laptops.jpg);
+}
+
+.article-image.img-3 {
+    background-image: url(./assets/images/image-gaming-growth.jpg);
 }
