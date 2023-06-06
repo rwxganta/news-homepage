@@ -125,19 +125,19 @@ header nav {
     background-color: var(--neutral-Off-white);
 
     transform: translateX(100%);
+    transition: transform 250ms;
     z-index: 2;
 }
 
 /* overlay */
-body::after {
-    content: '';
-    display: block;
+.overlay {
+    display: none;
     position: fixed;
     inset: 0;
     background-color: rgba(0, 0, 0, .5);
     z-index: 1;
-
-    display: none;
+    opacity: 0;
+    transition: opacity .5s;
 }
 
 header nav ul {
@@ -162,10 +162,18 @@ header nav li {
     right: 20px;
     top: 20px;
     width: 30px;
-    aspect-ratio: 1;
     border: 0;
     background: none;
     cursor: pointer;
+}
+
+.show-nav {
+    transform: translateX(0);
+}
+
+.show-overlay {
+    display: block;
+    opacity: 1;
 }
 
 .featured-read-more {
