@@ -204,7 +204,7 @@ header nav li {
     margin-block: 4rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1em;
+    gap: 2.3em;
 }
 
 .card-body {
